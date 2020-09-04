@@ -36,8 +36,6 @@ export const setLike = (id, value) => async (dispatch) => {
 		}
 	});
 
-	const res = await api.patchLike(id, value);
-
 	setTimeout(() => {
 		dispatch({
 			type: SET_LIKE_SUCCESS,

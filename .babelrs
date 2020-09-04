@@ -1,7 +1,0 @@
-{
-	"plugins": [
-		"@babel/plugin-transform-classes",
-		"@babel/plugin-transform-block-scoping",
-		"@babel/plugin-transform-literals"
-	]
-}

@@ -46,6 +46,7 @@
 		"@babel/plugin-transform-block-scoping": "^7.11.1",
 		"@babel/plugin-transform-classes": "^7.10.4",
 		"@babel/plugin-transform-literals": "^7.10.4",
+		"@babel/preset-env": "^7.11.5",
 		"node-sass": "^4.14.1"
 	}
 }

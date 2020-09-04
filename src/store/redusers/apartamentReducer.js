@@ -37,7 +37,6 @@ export default (state = initialState, { type, payload }) => {
 				}
 				return el;
 			});
-			// console.log(newArr);
 			return {
 				...state,
 				apartaments: newArr,
