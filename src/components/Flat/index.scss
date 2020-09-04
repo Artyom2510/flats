@@ -1,0 +1,170 @@
+@import '../../style/index.scss';
+
+.list {
+	&__item {
+		margin: 0 24px 24px 0;
+
+		&:nth-child(3n),
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@media (max-width: $sm) {
+			&:nth-child(3n):not(:last-child) {
+				margin-right: 24px;
+			}
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@media (max-width: $xs) {
+			margin-bottom: 36px;
+
+			&:nth-child(3n),
+			&:nth-child(3n):not(:last-child),
+			& {
+				margin-right: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.item {
+	position: relative;
+	display: block;
+	width: calc(33.33% - 16px);
+	padding: 50px 24px 32px;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color: $white;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+	transition: box-shadow .2s ease;
+
+	&:nth-child(3n + 2) {
+		width: calc(33.34% - 16px);
+	}
+
+	@media (max-width: $sm) {
+		width: calc(50% - 12px);
+
+		&:nth-child(3n + 2) {
+			width: calc(50% - 12px);
+		}
+	}
+
+	@media (max-width: $xs) {
+		width: 100%;
+
+		&:nth-child(3n + 2) {
+			width: 100%;
+		}
+	}
+
+	&:hover {
+		box-shadow: 0 10px 10px rgba($pink, 0.1);
+	}
+
+	&__like {
+		position: absolute;
+		z-index: 1;
+		top: 12px;
+		right: 12px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 40px;
+		height: 40px;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		outline: none !important;
+		cursor: pointer;
+
+		&:hover {
+			svg {
+				path {
+					fill: $pink;
+				}
+			}
+		}
+
+		svg, img {
+			display: block;
+			width: 24px;
+			height: auto;
+
+			path {
+				transition: fill .2s ease;
+			}
+		}
+
+		&_liked {
+			svg {
+				path {
+					fill: $pink;
+				}
+			}
+
+			&:hover {
+				svg {
+					path {
+						fill: $black;
+					}
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		min-height: 64px;
+		text-align: center;
+		color: $black;
+	}
+
+	&__subtitle {
+		margin-bottom: 12px;
+		color: $black;
+	}
+
+	&__info {
+		margin-bottom: 12px;
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	&__addr {
+		display: block;
+		margin-bottom: 12px;
+		counter-reset: item;
+
+		li {
+			position: relative;
+			display: block;
+			margin-bottom: 10px;
+			font-size: 21px;
+			line-height: 1;
+			font-weight: 400;
+
+			&::before {
+				content: counter(item)") ";
+				counter-increment: item;
+				font: inherit;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&__contacts {
+		color: $satan;
+	}
+}
